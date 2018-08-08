@@ -11,12 +11,18 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth.guard';
+import { UnauthGuard } from './unauth.guard';
+
 import { TokenInterceptorService } from './token-interceptor.service';
 import { RoleComponent } from './role/role.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { LeftmenuComponent } from './layout/leftmenu/leftmenu.component';
+import { RightmenuComponent } from './layout/rightmenu/rightmenu.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { LayoutComponent } from './layout/layout.component';
+import { UserComponent } from './layout/user/user.component';
+import { VisitorComponent } from './layout/visitor/visitor.component';
+
 
 
 
@@ -31,15 +37,18 @@ import { LayoutComponent } from './layout/layout.component';
     RoleComponent,
     HeaderComponent,
     LeftmenuComponent,
+    RightmenuComponent,
     FooterComponent,
-    LayoutComponent
+    LayoutComponent,
+    UserComponent,
+    VisitorComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [AuthService, AuthGuard, {
+  providers: [AuthService, AuthGuard, UnauthGuard, {
     provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptorService,
     multi: true
