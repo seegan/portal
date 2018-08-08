@@ -5,8 +5,8 @@
 */
 
 
-!function($) {
-    "use strict";
+jQuery(document).ready(function($){
+
 
     var Sidemenu = function() {
         this.$body = $("body"),
@@ -68,12 +68,11 @@
       this.$openLeftBtn.on(event, function(e) {
         e.stopPropagation();
         $this.openLeftBar();
-
-      
       });
 
       // LEFT SIDE MAIN NAVIGATION
       $this.$menuItem.on(event, $this.menuItemClick);
+
 
       // NAVIGATION HIGHLIGHT & OPEN PARENT
       $("#sidebar-menu ul li.has_sub a.active").parents("li:last").children("a:first").addClass("active").trigger("click");
@@ -82,11 +81,7 @@
     //init Sidemenu
     $.Sidemenu = new Sidemenu, $.Sidemenu.Constructor = Sidemenu
     
-}(window.jQuery),
 
-
-function($) {
-    "use strict";
 
     var FullScreen = function() {
         this.$body = $("body"),
@@ -131,20 +126,15 @@ function($) {
     FullScreen.prototype.init = function() {
       var $this  = this;
       //bind
-      $this.$fullscreenBtn.on('click', function() {
+      $this.$fullscreenBtn.on('click', function(e) {
+        e.preventDefault();
         $this.toggle_fullscreen();
       });
     },
      //init FullScreen
     $.FullScreen = new FullScreen, $.FullScreen.Constructor = FullScreen
     
-}(window.jQuery),
 
-
-
-//main app module
- function($) {
-    "use strict";
     
     var App = function() {
         this.VERSION = "2.0.0",
@@ -170,8 +160,8 @@ function($) {
 
       // right side-bar toggle
       $('.right-bar-toggle').on('click', function(e){
-
-          $('#wrapper').toggleClass('right-bar-enabled');
+        e.preventDefault();
+        $('#wrapper').toggleClass('right-bar-enabled');
       }); 
 
       
@@ -189,13 +179,9 @@ function($) {
 
     $.App = new App, $.App.Constructor = App
 
-}(window.jQuery),
-
-//initializing main application module
-function($) {
-    "use strict";
     $.App.init();
-}(window.jQuery);
+
+});
 
 
 
