@@ -4,7 +4,6 @@ export interface IRole {
 	privileges: Array<Privileges>;
 }
 export interface Privileges {
-
     id: number;
     name: string;
     type: string;

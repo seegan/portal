@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-leftmenu',
@@ -6,9 +6,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LeftmenuComponent implements OnInit {
 
-  constructor() { }
+	@Input() message: string;
+	constructor() {
+		console.log(this.message)
+	}
 
-  ngOnInit() {
-  }
+	ngOnInit() {
+
+	}
 
 }

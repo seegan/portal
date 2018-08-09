@@ -9,10 +9,10 @@ import { RoleService } from '../services/role.service';
 })
 export class RoleComponent implements OnInit {
 
-  constructor(private role: RoleService) { }
+  constructor(private Role: RoleService) { }
 
   ngOnInit() {
-  	this.role.getRoles()
+  	this.Role.getRoles()
   }
 
 }

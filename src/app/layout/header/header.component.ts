@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { AuthService } from '../../auth.service';
 
 @Component({
@@ -7,10 +7,11 @@ import { AuthService } from '../../auth.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private Auth: AuthService) { }
+	@Input() message: string;
+  	constructor(private Auth: AuthService) { }
 
-  ngOnInit() {
-  }
+  	ngOnInit() {
+  	}
 
 
   logOut() {

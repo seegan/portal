@@ -11,17 +11,15 @@ import { AuthService } from '../auth.service';
 })
 export class RoleService {
 
-  constructor(private http: HttpClient, private auth: AuthService) { 
+  constructor(private Http: HttpClient, private Auth: AuthService) { 
   }
-
   protected headers: HttpHeaders = new HttpHeaders();
 
-
   getRoles() {
-    this.auth.addHeader('Content-Type', 'application/json')
-    this.http.get('/api/v1/admin/roles',
+    this.Auth.addHeader('Content-Type', 'application/json')
+    this.Http.get('/api/v1/admin/roles',
     {
-      'headers': this.auth.getHttpHeaders(),
+      'headers': this.Auth.getHttpHeaders(),
       'responseType': 'json'
     })
     .subscribe( 
