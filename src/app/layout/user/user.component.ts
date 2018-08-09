@@ -10,9 +10,11 @@ export class UserComponent implements OnInit {
 
 	message: string
 	constructor() {
-		 this.message = "My Message";
+		 this.message = "My Message ss";
 	}
+
 	ngOnInit() {
+		this.message = "My Message gg";
 	}
 
 }

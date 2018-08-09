@@ -25,7 +25,6 @@ export class AuthService {
   }
 
 
-
   loggedIn() {
     return !!localStorage.getItem('_user_token')
   }
