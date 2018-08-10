@@ -10,12 +10,10 @@ export class HeaderComponent implements OnInit {
 	@Input() message: string;
   	constructor(private Auth: AuthService) { }
 
-  	ngOnInit() {
-  	}
-
-
+  ngOnInit() {
+  }
+  
   logOut() {
-  	console.log('sdfsdf');
   	this.Auth.logoutUser()
   }
 

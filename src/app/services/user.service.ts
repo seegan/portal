@@ -32,16 +32,35 @@ export class UserService {
 /*
 To Java usercontroller
 
-	@PreAuthorize("hasRole('ADMIN_ACCESS')")
+
+
+
+  @PreAuthorize("hasRole('ADMIN_ACCESS')")
     @GetMapping("/user")
     public ApplicationUser getUserByName() {
-		
-		
-		ApplicationUser user = (ApplicationUser)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-		ApplicationUser userData = userDao.findByUsername(user.getUsername());
-		
-    	return userData;
-    }*/
+    ApplicationUser userData = userDetail.getCurrentUserData();
+      return userData;
+    }
+
+
+
+public class UserDetail {
+  
+  @Autowired
+  private  UserDao userDao;
+  
+    public ApplicationUser getCurrentUserData() {
+
+    ApplicationUser user = (ApplicationUser)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+    ApplicationUser userData = userDao.findByUsername(user.getUsername());
+      return userData;
+    }
+    
+}
+
+
+    
+*/
 
 
 
