@@ -7,13 +7,14 @@ import { UserService } from '../../services/user.service';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-	message: string
+	message: any
 	constructor(private user: UserService) {
 		this.message = "My Message ss"
 	}
 
 	ngOnInit() {
-		this.user.getUserDetail()
-		this.message = "My Message gg"
+		
+		this.message = this.user.getUserDetail()
+		console.log(this.message)
 	}
 }

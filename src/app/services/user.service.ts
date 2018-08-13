@@ -20,47 +20,13 @@ export class UserService {
     })
     .subscribe( 
       data => {
-        console.log(data)
+        return data
       },
       err => {
         console.log('Failed')
       }
     )
   }
-
-
-/*
-To Java usercontroller
-
-
-
-
-  @PreAuthorize("hasRole('ADMIN_ACCESS')")
-    @GetMapping("/user")
-    public ApplicationUser getUserByName() {
-    ApplicationUser userData = userDetail.getCurrentUserData();
-      return userData;
-    }
-
-
-
-public class UserDetail {
-  
-  @Autowired
-  private  UserDao userDao;
-  
-    public ApplicationUser getCurrentUserData() {
-
-    ApplicationUser user = (ApplicationUser)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-    ApplicationUser userData = userDao.findByUsername(user.getUsername());
-      return userData;
-    }
-    
-}
-
-
-    
-*/
 
 
 
