@@ -6,7 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class LeftmenuComponent implements OnInit {
 
-	@Input() message: string;
+	@Input() userdetail: array;
 	constructor() {
 		console.log(this.message)
 	}

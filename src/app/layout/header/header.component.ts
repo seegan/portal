@@ -7,7 +7,7 @@ import { AuthService } from '../../auth.service';
 })
 export class HeaderComponent implements OnInit {
 
-	@Input() message: string;
+	@Input() userdetail: array;
   	constructor(private Auth: AuthService) { }
 
   ngOnInit() {

@@ -4,7 +4,11 @@
         <!--- Divider -->
         <div id="sidebar-menu">
             <ul>
-                <li class="menu-title">{{message}}</li>
+                <li class="menu-title">
+                    {{userdetail.username}}
+                    <br>
+                    <small>{{userdetail.role}}</small>
+                </li>
                 <li>
                     <a href="index.html" class="waves-effect waves-primary"><i
                             class="ti-home"></i><span> Dashboard </span></a>

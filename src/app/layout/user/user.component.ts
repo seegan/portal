@@ -7,14 +7,29 @@ import { UserService } from '../../services/user.service';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-	message: any
+	username:string = ""
+	role:string = ""
+	userdetail:array = []
+
 	constructor(private user: UserService) {
-		this.message = "My Message ss"
+		this.userdetail.username = "Loading ..."
+		this.userdetail.role = "Loading ..."
 	}
 
 	ngOnInit() {
-		
-		this.message = this.user.getUserDetail()
-		console.log(this.message)
+		this.user.getUserDetail()
+			.subscribe( data => {
+				this.userdetail.username = data.username.capitalize()
+
+				if (data.roles.length >= 1) {
+					this.userdetail.role = data.roles[0].name
+				}
+				//this.message = data.message.capitalize(),
+			}
+		)
 	}
+}
+
+String.prototype.capitalize = function() {
+    return this.charAt(0).toUpperCase() + this.slice(1);
 }
