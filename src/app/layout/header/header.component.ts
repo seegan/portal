@@ -7,14 +7,14 @@ import { AuthService } from '../../auth.service';
 })
 export class HeaderComponent implements OnInit {
 
-	@Input() userdetail: array;
+	@Input() userdetail: Array<{username: string, role: string}>
   	constructor(private Auth: AuthService) { }
 
-  ngOnInit() {
-  }
-  
-  logOut() {
-  	this.Auth.logoutUser()
-  }
+	ngOnInit() {
+	}
+
+	logOut() {
+		this.Auth.logoutUser()
+	}
 
 }
