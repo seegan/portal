@@ -10,10 +10,13 @@
                     <small>{{userdetail.role}}</small>
                 </li>
                 <li>
-                    <a href="index.html" class="waves-effect waves-primary"><i
+                    <a [routerLink]="['/dashboard']" class="waves-effect waves-primary"><i
                             class="ti-home"></i><span> Dashboard </span></a>
                 </li>
-
+                <li>
+                    <a [routerLink]="['/roles']" class="waves-effect waves-primary"><i
+                            class="ti-home"></i><span> Role </span></a>
+                </li>
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect waves-primary"><i class="ti-paint-bucket"></i> <span> UI Kit </span>
                         <span class="menu-arrow"></span></a>

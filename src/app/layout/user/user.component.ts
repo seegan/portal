@@ -7,8 +7,6 @@ export interface user{
 }
 
 
-
-
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -16,13 +14,9 @@ export interface user{
 })
 export class UserComponent implements OnInit {
 
-
-
-
-
 	username:string = ""
 	role:string = ""
-	userdetail: Array<user>
+	userdetail:Array<user>
 
 	constructor(private user: UserService) {
 		this.userdetail = [];
@@ -31,14 +25,11 @@ export class UserComponent implements OnInit {
 	ngOnInit() {
 		this.user.getUserDetail()
 			.subscribe( (data : any) => {
-
 				this.userdetail["username"] = data.username
 				this.userdetail["role"] = ""
 				if (data.roles.length >= 1) {
 					this.userdetail["role"] = data.roles[0].name
 				}
-
-				//this.message = data.message.capitalize(),
 			}
 		)
 	}
