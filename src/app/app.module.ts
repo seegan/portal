@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -14,7 +15,6 @@ import { AuthGuard } from './auth.guard';
 import { UnauthGuard } from './unauth.guard';
 
 import { TokenInterceptorService } from './token-interceptor.service';
-import { RoleComponent } from './role/role.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { LeftmenuComponent } from './layout/leftmenu/leftmenu.component';
 import { RightmenuComponent } from './layout/rightmenu/rightmenu.component';
@@ -22,6 +22,7 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { LayoutComponent } from './layout/layout.component';
 import { UserComponent } from './layout/user/user.component';
 import { VisitorComponent } from './layout/visitor/visitor.component';
+import { RoleListComponent, RoleAddComponent } from './role';
 
 
 
@@ -33,17 +34,19 @@ import { VisitorComponent } from './layout/visitor/visitor.component';
     LoginComponent,
     DashboardComponent,
     HomeComponent,
-    RoleComponent,
     HeaderComponent,
     LeftmenuComponent,
     RightmenuComponent,
     FooterComponent,
     LayoutComponent,
     UserComponent,
-    VisitorComponent
+    VisitorComponent,
+    RoleAddComponent,
+    RoleListComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     HttpClientModule
   ],

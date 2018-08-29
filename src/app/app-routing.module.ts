@@ -8,8 +8,7 @@ import { LoginComponent } from './login/login.component';
 
 import { UserComponent } from './layout/user/user.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { RoleComponent } from './role/role.component';
-
+import { RoleListComponent, RoleAddComponent } from './role';
 
 import { AuthGuard } from './auth.guard';
 import { UnauthGuard } from './unauth.guard';
@@ -41,9 +40,14 @@ const routes: Routes = [
 			},
 			{
 				path : 'roles',
-				component : RoleComponent,
+				component : RoleListComponent,
 				canActivate : [AuthGuard]
 			},
+			{
+				path : 'role/add',
+				component : RoleAddComponent,
+				canActivate : [AuthGuard]
+			}
 		]
 	},
     {

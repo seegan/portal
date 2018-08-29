@@ -958,7 +958,7 @@ a:focus {
   font-size: 15px;
   font-weight: 700;
   line-height: 16px;
-  margin-bottom: 8px;
+  margin-bottom: 20px;
   margin-top: 0;
 }
 
@@ -1996,6 +1996,17 @@ code, pre {
 .button-list .btn {
   margin-bottom: 12px;
   margin-left: 8px;
+}
+
+.btn-primary.disabled, .btn-primary:disabled {
+    color: #fff;
+    background-color: #949494;
+    border-color: #949494;
+}
+.btn-primary.disabled:hover, .btn-primary:disabled:hover {
+    color: #fff;
+    background-color: #949494;
+    border-color: #949494;
 }
 
 /* =============
@@ -6019,4 +6030,3 @@ File: Responsive
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) !important;
   }
 }
-/*# sourceMappingURL=style.css.map */

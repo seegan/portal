@@ -8,9 +8,11 @@ export class LeftmenuComponent implements OnInit {
 
 	@Input() userdetail: Array<{username: string, role: string}>
 	constructor() {
+		
 	}
 
 	ngOnInit() {
+
 	}
 
 }
